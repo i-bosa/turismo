@@ -10,7 +10,7 @@ Definimos los features: mes, región, inflación, brecha cambiaria e índice big
 Utilizamos una Random Forest Regression. Dividimos los datos en grupos de entrenamiento y de prueba estratificando según una combinación del mes y la región. A las columnas numéricas le aplicamos un Robust Scaler. A la columna de región, un One Hot Encoder y a la columna de mes un encoding trigonométrico.
 Aplicamos la regresión y comparamos la predicción con los valores reales como se ve en el 2do gráfico.
 
-<img width="328" height="375" alt="lineal" src="https://github.com/user-attachments/assets/22b3a807-0b44-4580-9821-824e64514cca" />
+<img width="300" height="400" alt="lineal" src="https://github.com/user-attachments/assets/22b3a807-0b44-4580-9821-824e64514cca" />
 
 Realizamos una validación cruzada de 5 pliegues con la misma estratificación y obtuvimos un score de 0.88 ± 0.02, lo que indica que el modelo predice y generaliza bien.
 También vimos que las variables económicas son relevantes y su grado de importancia, como se ve en el 3er gráfico, lo que prueba que hay una relación entre la cantidad de turismo al exterior y estas variables económicas.
