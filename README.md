@@ -4,16 +4,16 @@ Utilizamos un dataset de turismo internacional de datos.gob.ar y datasets de val
 En el preprocesamiento de datos, calculamos la brecha cambiaria en porcentaje del dólar oficial, asignamos con un criterio adecuado valores de índice big mac a las regiones que no coincidían entre ambos datasets y extendimos sus valores a los meses contiguos a la publicación del índice.
 Al inspeccionar los datos, observamos que la cantidad de turistas a cada región depende fuertemente del mes del año. También vimos que durante la pandemia hubo un decrecimiento significativo del turismo, como se puede ver en el 1er gráfico, por lo que no consideramos esos datos.
 
-<img width="325" height="260" alt="pandemia" src="https://github.com/user-attachments/assets/64fa9189-39c9-4d08-88c3-91f1fa40497b" />
+<img width="650" height="520" alt="pandemia" src="https://github.com/user-attachments/assets/64fa9189-39c9-4d08-88c3-91f1fa40497b" />
 
 Definimos los features: mes, región, inflación, brecha cambiaria e índice big mac relativo y como target a la cantidad de turistas.
 Utilizamos una Random Forest Regression. Dividimos los datos en grupos de entrenamiento y de prueba estratificando según una combinación del mes y la región. A las columnas numéricas le aplicamos un Robust Scaler. A la columna de región, un One Hot Encoder y a la columna de mes un encoding trigonométrico.
 Aplicamos la regresión y comparamos la predicción con los valores reales como se ve en el 2do gráfico.
 
-<img width="310" height="232" alt="lineal" src="https://github.com/user-attachments/assets/9925502c-fb66-427f-9d43-15ab8f98e0b6" />
+<img width="620" height="464" alt="lineal" src="https://github.com/user-attachments/assets/9925502c-fb66-427f-9d43-15ab8f98e0b6" />
 
 
 Realizamos una validación cruzada de 5 pliegues con la misma estratificación y obtuvimos un score de 0.88 ± 0.02, lo que indica que el modelo predice y generaliza bien.
 También vimos que las variables económicas son relevantes y su grado de importancia, como se ve en el 3er gráfico, lo que prueba que hay una relación entre la cantidad de turismo al exterior y estas variables económicas.
 
-<img width="328" height="375" alt="Importancia" src="https://github.com/user-attachments/assets/9286f536-e05f-401f-b43e-79a1a070998e" />
+<img width="660" height="750" alt="Importancia" src="https://github.com/user-attachments/assets/9286f536-e05f-401f-b43e-79a1a070998e" />
